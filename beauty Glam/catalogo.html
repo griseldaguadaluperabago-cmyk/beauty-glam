@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Glam - Catálogo Exclusivo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Beauty Glam<span class="logo-heart">. <i class="fas fa-heart"></i></span>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cuenta.html">Mi Cuenta</a></li>
+            </ul>
+            <ul id="auth-links">
+                </ul>
+        </nav>
+        
+        <div id="user-greeting" style="margin-right: 15px;">
+            </div>
+
+        <div class="cart-icon-container">
+            <a href="carrito.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+        <button id="dark-mode-toggle">Modo Oscuro</button>
+    </header>
+
+    <main class="catalogo-grid">
+        <h2>👑 Exclusivos de Marcas Top y Minoristas de Prestigio 👑</h2>
+        
+        <div class="producto-card">
+            <img src="imagenes/Labial Couture Velvet (Dior).jpg" alt="Labial Couture Velvet de Dior" class="product-image">
+            <h3>Labial Couture Velvet (Dior)</h3>
+            <p class="precio">$1,350.00 MXN</p>
+            <p>El color icónico y la duración de la más alta costura. Exclusivo de la línea **Rouge Couture**.</p>
+            <button class="btn-primary" onclick="addToCart(1, 'Labial Couture Velvet (Dior)', 1350.00)">Adquirir Lujo</button>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/Base Suprême Flawless (Estée Lauder).jpg" alt="Base Suprême Flawless" class="product-image">
+            <h3>Base Suprême Flawless (Estée Lauder)</h3>
+            <p class="precio">$2,500.00 MXN</p>
+            <p>La base más vendida por su cobertura total y acabado de terciopelo. **Producto destacado en Sephora**.</p>
+            <button class="btn-primary" onclick="addToCart(2, 'Base Suprême Flawless', 2500.00)">Adquirir Lujo</button>
+        </div>
+        
+        <div class="producto-card">
+            <img src="imagenes/Paleta de Sombras Nude Obsessions (Huda Beauty).jpg" alt="Paleta de Sombras Nude Obsessions" class="product-image">
+            <h3>Paleta de Sombras Nude Obsessions (Huda Beauty)</h3>
+            <p class="precio">$1,900.00 MXN</p>
+            <p>Doce pigmentos aterciopelados de larga duración. Tonos inspirados en la realeza.</p>
+            <button class="btn-primary" onclick="addToCart(3, 'Paleta de Sombras Nude Obsessions', 1900.00)">Adquirir Lujo</button>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/Máscara Lashes Volumizer Épique (Chanel).jpg" alt="Máscara Lashes Volumizer Épique de Chanel" class="product-image">
+            <h3>Máscara Lashes Volumizer Épique (Chanel)</h3>
+            <p class="precio">$1,100.00 MXN</p>
+            <p>Volumen y definición dramática sin apelmazar. El secreto de los maquilladores **Vogue**.</p>
+            <button class="btn-primary" onclick="addToCart(4, 'Máscara Lashes Volumizer Épique', 1100.00)">Adquirir Lujo</button>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/CC Cream Lumière D'Or (IT Cosmetics).jpg" alt="CC Cream Lumière D'Or" class="product-image">
+            <h3>CC Cream Lumière D'Or (IT Cosmetics)</h3>
+            <p class="precio">$1,580.00 MXN</p>
+            <p>Base-tratamiento que corrige imperfecciones con filtro solar de amplio espectro.</p>
+            <button class="btn-primary" onclick="addToCart(5, 'CC Cream Lumière D\'Or', 1580.00)">Adquirir Lujo</button>
+        </div>
+        
+        <div class="producto-card">
+            <img src="imagenes/Blush Líquido Orgasm X (NARS).jpg" alt="Blush Líquido Orgasm X de NARS" class="product-image">
+            <h3>Blush Líquido Orgasm X (NARS)</h3>
+            <p class="precio">$1,040.00 MXN</p>
+            <p>La fórmula líquida del rubor más vendido del mundo. Un brillo que dura todo el día.</p>
+            <button class="btn-primary" onclick="addToCart(6, 'Blush Líquido Orgasm X', 1040.00)">Adquirir Lujo</button>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/Polvo de Acabado Invisiblur (Pat McGrath Labs).jpg" alt="Polvo de Acabado Invisiblur" class="product-image">
+            <h3>Polvo de Acabado Invisiblur (Pat McGrath Labs)</h3>
+            <p class="precio">$1,760.00 MXN</p>
+            <p>El polvo de los desfiles de alta moda. Fija y matifica con un efecto "filtro" natural.</p>
+            <button class="btn-primary" onclick="addToCart(7, 'Polvo de Acabado Invisiblur', 1760.00)">Adquirir Lujo</button>
+        </div>
+        
+        <div class="producto-card">
+            <img src="imagenes/Colección Bestsellers de Labiales Líquidos (Kylie Cosmetics).jpg" alt="Colección Bestsellers de Labiales Líquidos" class="product-image">
+            <h3>Colección Bestsellers de Labiales Líquidos (Kylie Cosmetics)</h3>
+            <p class="precio">$2,800.00 MXN</p>
+            <p>Set exclusivo de los labiales líquidos más influyentes del mercado de la belleza.</p>
+            <button class="btn-primary" onclick="addToCart(8, 'Colección Bestsellers de Labiales', 2800.00)">Adquirir Lujo</button>
+        </div>
+        
+        <div class="producto-card">
+            <img src="imagenes/Iluminador Fusión Killawatt (Fenty Beauty).jpg" alt="Iluminador Fusión Killawatt de Fenty Beauty" class="product-image">
+            <h3>Iluminador Fusión Killawatt (Fenty Beauty)</h3>
+            <p class="precio">$1,300.00 MXN</p>
+            <p>El iluminador que define el *glow* moderno. Tono universal para todos los tonos de piel.</p>
+            <button class="btn-primary" onclick="addToCart(9, 'Iluminador Fusión Killawatt', 1300.00)">Adquirir Lujo</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Beauty Glam. ¡Brilla con nosotros!</p>
+    </footer>
+</body>
+</html>

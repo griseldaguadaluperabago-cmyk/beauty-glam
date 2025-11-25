@@ -1,0 +1,533 @@
+/* ======================================================= */
+/* 1. PALETA DE COLORES Y VARIABLES */
+/* ======================================================= */
+
+/* Variables para Modo Claro (Predominio de Blanco) */
+:root {
+    --color-primary: #ddb6c2; 
+    --color-text: #333333; 
+    --color-background: #ffffff; 
+    --color-light-background: #f8f8f8; 
+    --color-footer: #1c1c1c; 
+}
+
+/* Variables para Modo Oscuro (Predominio de Negro) */
+body.dark-mode {
+    --color-primary: #f2c7d1; /* Un poco más claro para contraste en oscuro */
+    --color-text: #ffffff; 
+    --color-background: #121212; 
+    --color-light-background: #1e1e1e; 
+    --color-footer: #000000; 
+}
+
+/* ======================================================= */
+/* 2. ESTILOS BASE Y GENERALES */
+/* ======================================================= */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover { text-decoration: underline; }
+
+
+/* ======================================================= */
+/* 3. HEADER Y NAVEGACIÓN (LOGOTIPO) */
+/* ======================================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-light-background);
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-text);
+}
+
+.logo {
+    /* Estilos del texto principal del logo */
+    font-family: 'Dancing Script', cursive; 
+    font-size: 2.2em; 
+    font-weight: 700; 
+    color: var(--color-primary); 
+    display: flex; 
+    align-items: flex-end; 
+    transition: color 0.3s;
+}
+
+.logo-heart {
+    /* Estilos del corazón */
+    font-size: 0.6em; 
+    color: #ff0000; 
+    margin-left: 0.1em; 
+}
+
+nav {
+    display: flex; 
+    gap: 25px; 
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0; 
+    margin: 0;  
+}
+
+nav a {
+    color: var(--color-text); 
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo del botón de Modo Oscuro */
+#dark-mode-toggle {
+    background-color: var(--color-footer);
+    color: #ffffff; 
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#dark-mode-toggle:hover {
+    background-color: #555555;
+}
+
+
+/* ======================================================= */
+/* 4. ÍCONO DE CARRITO */
+/* ======================================================= */
+
+.cart-icon-container {
+    margin-right: 20px;
+    position: relative;
+}
+
+.cart-link {
+    color: var(--color-text);
+    font-size: 1.4em;
+    display: block;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.cart-link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff0000; 
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.7em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+/* ======================================================= */
+/* 5. BOTONES Y HERO (PÁGINA INICIO) */
+/* ======================================================= */
+
+.btn-primary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--color-primary); 
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #c9a4af; 
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    
+    /* === FONDO DE IMAGEN: Asegúrate de tener tu imagen 'inicio.jpg' === */
+    background-image: url('inicio.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: relative; 
+    color: white; 
+}
+
+/* Overlay para mejorar la legibilidad del texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+}
+
+/* Asegurar que el contenido esté por encima del overlay */
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h3 {
+    font-size: 1.5em; 
+    color: white; 
+    margin-bottom: 0.5em;
+    font-weight: 300; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: white; 
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+.hero p {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* ======================================================= */
+/* 6. CATÁLOGO */
+/* ======================================================= */
+
+.catalogo-grid {
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.catalogo-grid h2 {
+    grid-column: 1 / -1; 
+    text-align: center;
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.producto-card {
+    background-color: var(--color-light-background); 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.precio {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin: 10px 0;
+}
+
+.product-image {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+}
+
+
+/* ======================================================= */
+/* 7. FORMULARIOS (LOGIN/REGISTRO) */
+/* ======================================================= */
+
+.form-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: var(--color-light-background); 
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* ======================================================= */
+/* 8. ESTILOS DEL CARRITO (PÁGINA carrito.html) */
+/* ======================================================= */
+
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--color-light-background);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+/* Estilo de cada fila de producto en el carrito */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc;
+    color: var(--color-text);
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.item-info span {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.item-price, .item-quantity {
+    font-weight: bold;
+    width: 100px;
+    text-align: right;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: 15px;
+    transition: transform 0.2s;
+}
+.btn-remove:hover {
+    transform: scale(1.1);
+}
+
+/* Resumen y botones del Carrito */
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--color-primary);
+}
+
+.precio-total {
+    color: var(--color-primary);
+}
+
+.btn-checkout {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    color: var(--color-primary);
+    width: 100%;
+    transition: background-color 0.3s;
+}
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+
+/* ======================================================= */
+/* 9. FOOTER */
+/* ======================================================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--color-footer); 
+    color: white;
+    margin-top: 60px;
+    font-size: 0.9em;
+}
+
+/* ======================================================= */
+/* 10. ESTILOS DE CUENTA (PÁGINA cuenta.html) */
+/* ======================================================= */
+
+.account-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--color-light-background);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.account-container h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+#account-details {
+    padding-bottom: 20px;
+}
+
+.user-detail p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding: 8px;
+    background-color: var(--color-background);
+    border-radius: 5px;
+    text-align: left;
+    border-left: 5px solid var(--color-primary);
+}
+
+.user-detail strong {
+    display: inline-block;
+    width: 120px; 
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.btn-logout {
+    margin-top: 30px;
+    background-color: #ff4d4d; /* Rojo para cerrar sesión */
+    color: white;
+}
+.btn-logout:hover {
+    background-color: #e60000;
+}
+
+
+/* ======================================================= */
+/* 11. MEDIA QUERIES PARA RESPONSIVIDAD */
+/* ======================================================= */
+
+@media (max-width: 900px) {
+    /* Aquí se eliminaron los estilos de contacto, pero se mantuvo el breakpoint para otros elementos */
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .form-container {
+        margin: 40px 15px;
+        padding: 20px;
+    }
+    .cart-item {
+        flex-wrap: wrap;
+    }
+    .item-info, .item-price, .item-quantity, .btn-remove {
+        width: auto;
+        text-align: left;
+    }
+    .item-info {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .cart-summary {
+        font-size: 1.2em;
+    }
+}

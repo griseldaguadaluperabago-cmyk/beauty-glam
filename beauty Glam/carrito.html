@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Glam - Carrito de Compras</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Beauty Glam<span class="logo-heart">. <i class="fas fa-heart"></i></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+            </ul>
+            <ul id="auth-links">
+                </ul>
+        </nav>
+        
+        <div class="cart-icon-container">
+            <a href="carrito.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+        <button id="dark-mode-toggle">Modo Oscuro</button>
+    </header>
+
+    <main class="cart-container">
+        <h2>🛍️ Mi Carrito de Compras</h2>
+        
+        <div id="cart-items-list">
+            <p style="text-align: center;">Cargando productos...</p>
+        </div>
+        
+        <div class="cart-summary">
+            <p>Total a Pagar:</p>
+            <p id="cart-total-amount" class="precio-total">$0.00</p>
+        </div>
+
+        <button class="btn-primary btn-checkout" onclick="checkout()">
+            Finalizar Compra
+        </button>
+        <button class="btn-secondary" onclick="clearCart()">
+            Vaciar Carrito
+        </button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Beauty Glam. ¡Gracias por tu compra!</p>
+    </footer>
+</body>
+</html>

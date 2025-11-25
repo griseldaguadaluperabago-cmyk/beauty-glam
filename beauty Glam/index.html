@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Glam - Acceso</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Beauty Glam<span class="logo-heart">. <i class="fas fa-heart"></i></span>
+        </div>
+        </header>
+
+    <main class="form-container">
+        <div id="auth-forms-switcher">
+            
+            <div id="login-section" style="display: block;">
+                <h2>Inicia Sesión</h2>
+                <form id="login-form">
+                    <label for="login-email">Correo Electrónico:</label>
+                    <input type="email" id="login-email" name="email" required>
+
+                    <label for="login-password">Contraseña:</label>
+                    <input type="password" id="login-password" name="password" required>
+
+                    <button type="submit" class="btn-primary">Acceder</button>
+                    <p class="form-link">¿No tienes cuenta? 
+                        <a href="#" onclick="switchForm('register'); return false;">Regístrate aquí</a>
+                    </p>
+                </form>
+            </div>
+            
+            <div id="register-section" style="display: none;">
+                <h2>Crea tu Cuenta</h2>
+                <form id="register-form">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="register-email">Correo Electrónico:</label>
+                    <input type="email" id="register-email" name="email" required>
+
+                    <label for="register-password">Contraseña:</label>
+                    <input type="password" id="register-password" name="password" required>
+
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <button type="submit" class="btn-primary">Registrarme</button>
+                    <p class="form-link">¿Ya tienes cuenta? 
+                        <a href="#" onclick="switchForm('login'); return false;">Inicia Sesión</a>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Beauty Glam.</p>
+    </footer>
+</body>
+</html>
